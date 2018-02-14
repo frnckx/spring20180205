@@ -28,12 +28,14 @@ public class BookRestController {
 		bookService.deleteById(id);
 	}
 
-
 	@RequestMapping(value = "/books/{id}", method = RequestMethod.PUT)
 	 public Book updateBookById(@PathVariable("id") int id, @RequestBody Book book){
 		return bookService.updateById(id, book);
 	}
 
-	//find all
-	//
+
+	@RequestMapping(value = "/books", method = RequestMethod.GET)
+	public Iterable<Book> getAll(){
+	 	return bookService.getAll();
+	}
 }

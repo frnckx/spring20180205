@@ -34,5 +34,7 @@ public class BookService {
 		return bookRepository.save(oldBook);
 	}
 
-
+	public Iterable<Book> getAll(){
+		return bookRepository.findAll();
+	}
 }
